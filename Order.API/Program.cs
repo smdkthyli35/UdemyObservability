@@ -25,15 +25,12 @@ builder.Services.AddOpenTelemetry().WithTracing(options =>
     {
         aspNetCoreOptions.Filter = (context) =>
         {
-            //if (!string.IsNullOrEmpty(context.Request.Path.Value))
-            //    return context.Request.Path.Value.Contains("api", StringComparison.InvariantCulture);
-
-            //return false;
-
             return !string.IsNullOrEmpty(context.Request.Path.Value) 
                 ? context.Request.Path.Value.Contains("api", StringComparison.InvariantCulture) 
                 : false;
         };
+
+        aspNetCoreOptions.RecordException = true;
     });
 
     options.AddConsoleExporter();
