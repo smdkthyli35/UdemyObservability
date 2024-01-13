@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyObservability.ConsoleApp", "UdemyObservability.ConsoleApp\UdemyObservability.ConsoleApp.csproj", "{704830B8-00F2-4C13-B02F-2CA7BE05A956}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9CE1C74A-DED4-405C-AC28-E3E955772062}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{704830B8-00F2-4C13-B02F-2CA7BE05A956}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{704830B8-00F2-4C13-B02F-2CA7BE05A956}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{704830B8-00F2-4C13-B02F-2CA7BE05A956}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CE1C74A-DED4-405C-AC28-E3E955772062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE1C74A-DED4-405C-AC28-E3E955772062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE1C74A-DED4-405C-AC28-E3E955772062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE1C74A-DED4-405C-AC28-E3E955772062}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
