@@ -25,8 +25,8 @@ namespace UdemyObservability.ConsoleApp
                 eventTags.Add("Google Response Lengst", responseContent.Length);
                 activity?.AddEvent(new("Google'a istek tamamlandı!", tags: eventTags));
 
-                //ServiceTwo serviceTwo = new();
-                //var fileLength = await serviceTwo.WriteToFile("Hello World!");
+                ServiceTwo serviceTwo = new();
+                var fileLength = await serviceTwo.WriteToFile("Hello World!");
 
                 return responseContent.Length;
             }

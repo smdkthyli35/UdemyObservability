@@ -3,7 +3,7 @@ using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using UdemyObservability.ConsoleApp;
 
-var traceProvider = Sdk.CreateTracerProviderBuilder()
+using var traceProvider = Sdk.CreateTracerProviderBuilder()
     .AddSource(OpenTelemetryConstants.ActivitySourceName)
     .ConfigureResource(configure =>
     {
@@ -14,7 +14,7 @@ var traceProvider = Sdk.CreateTracerProviderBuilder()
                     new KeyValuePair<string, object>("host.machineName", Environment.MachineName),
                     new KeyValuePair<string, object>("host.environment", "dev"),
                 });
-    }).AddConsoleExporter().Build();
+    }).AddConsoleExporter().AddOtlpExporter().Build();
 
 var serviceHelper = new ServiceHelper();
 await serviceHelper.Work1();
