@@ -4,6 +4,7 @@ using OpenTelemetry.Trace;
 using UdemyObservability.ConsoleApp;
 
 var traceProvider = Sdk.CreateTracerProviderBuilder()
+    .AddSource(OpenTelemetryConstants.ActivitySourceName)
     .ConfigureResource(configure =>
     {
         configure
