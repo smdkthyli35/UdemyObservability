@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyObservability.ConsoleA
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9CE1C74A-DED4-405C-AC28-E3E955772062}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.API", "Order.API\Order.API.csproj", "{5B6F8845-C036-4CB8-B22E-C6474D51E801}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9CE1C74A-DED4-405C-AC28-E3E955772062}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CE1C74A-DED4-405C-AC28-E3E955772062}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CE1C74A-DED4-405C-AC28-E3E955772062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B6F8845-C036-4CB8-B22E-C6474D51E801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B6F8845-C036-4CB8-B22E-C6474D51E801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B6F8845-C036-4CB8-B22E-C6474D51E801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B6F8845-C036-4CB8-B22E-C6474D51E801}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
