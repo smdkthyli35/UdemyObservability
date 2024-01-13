@@ -21,7 +21,21 @@ builder.Services.AddOpenTelemetry().WithTracing(options =>
             resource.AddService(OpenTelemetryConstants.ServiceName, serviceVersion: OpenTelemetryConstants.ServiceVersion);
         });
 
-    options.AddAspNetCoreInstrumentation();
+    options.AddAspNetCoreInstrumentation(aspNetCoreOptions =>
+    {
+        aspNetCoreOptions.Filter = (context) =>
+        {
+            //if (!string.IsNullOrEmpty(context.Request.Path.Value))
+            //    return context.Request.Path.Value.Contains("api", StringComparison.InvariantCulture);
+
+            //return false;
+
+            return !string.IsNullOrEmpty(context.Request.Path.Value) 
+                ? context.Request.Path.Value.Contains("api", StringComparison.InvariantCulture) 
+                : false;
+        };
+    });
+
     options.AddConsoleExporter();
     options.AddOtlpExporter(); //Jaeger
 });
