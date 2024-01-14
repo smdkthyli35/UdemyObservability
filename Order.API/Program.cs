@@ -1,12 +1,15 @@
 using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using Order.API.OpenTelemetry;
+using Order.API.OrderServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<OrderService>();
 
 builder.Services.Configure<OpenTelemetryConstants>(builder.Configuration.GetSection("OpenTelemetry"));
 
