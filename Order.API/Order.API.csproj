@@ -19,4 +19,8 @@
     <Folder Include="Models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\OpenTelemetry.Shared\OpenTelemetry.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
