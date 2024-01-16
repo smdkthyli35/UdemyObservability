@@ -40,6 +40,13 @@ namespace OpenTelemetry.Shared
                         aspNetCoreOptions.RecordException = true;
                     });
 
+                options
+                    .AddEntityFrameworkCoreInstrumentation(efCoreOptions =>
+                    {
+                        efCoreOptions.SetDbStatementForText = true;
+                        efCoreOptions.SetDbStatementForStoredProcedure = true;
+                    });
+
                 options.AddConsoleExporter();
                 options.AddOtlpExporter(); //Jaeger
             });

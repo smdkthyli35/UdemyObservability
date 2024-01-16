@@ -8,7 +8,7 @@
         public Guid UserId { get; set; }
         public OrderStatus Status { get; set; }
 
-        public List<OrderItem> Items { get; set; }
+        public List<OrderItem> Items { get; set; } = null!;
     }
 
     public enum OrderStatus : byte
@@ -23,5 +23,8 @@
         public int ProductId { get; set; }
         public int Count { get; set; }
         public decimal UnitPrice { get; set; }
+
+        public int OrderId { get; set; }
+        public Order Order { get; set; } = null!;
     }
 }

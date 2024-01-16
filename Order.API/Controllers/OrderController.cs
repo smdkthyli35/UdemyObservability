@@ -18,8 +18,7 @@ namespace Order.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(OrderCreateRequestDto request)
         {
-            await _orderService.CreateAsync(request);
-            return Ok(new OrderCreateResponseDto() { Id = new Random().Next(1, 500) });
+            return Ok(await _orderService.CreateAsync(request));
         }
     }
 }
