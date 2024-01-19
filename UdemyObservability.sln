@@ -9,9 +9,11 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.API", "Order.API\Order.API.csproj", "{5B6F8845-C036-4CB8-B22E-C6474D51E801}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenTelemetry.Shared", "..\OpenTelemetry.Shared\OpenTelemetry.Shared.csproj", "{17828550-E508-4D60-9062-1596F48ACA8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Shared", "Common.Shared\Common.Shared.csproj", "{9B63ADC5-7A1E-4BAA-9B8B-0E4C8C8BF4D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Shared", "Common.Shared\Common.Shared.csproj", "{9B63ADC5-7A1E-4BAA-9B8B-0E4C8C8BF4D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenTelemetry.Shared", "OpenTelemetry.Shared\OpenTelemetry.Shared.csproj", "{D6147B60-4137-422B-8262-E318B6E72D9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stock.API", "Stock.API\Stock.API.csproj", "{1A335444-B965-47D0-94B5-79810450E2A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +33,18 @@ Global
 		{5B6F8845-C036-4CB8-B22E-C6474D51E801}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B6F8845-C036-4CB8-B22E-C6474D51E801}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B6F8845-C036-4CB8-B22E-C6474D51E801}.Release|Any CPU.Build.0 = Release|Any CPU
-		{17828550-E508-4D60-9062-1596F48ACA8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17828550-E508-4D60-9062-1596F48ACA8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17828550-E508-4D60-9062-1596F48ACA8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17828550-E508-4D60-9062-1596F48ACA8D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9B63ADC5-7A1E-4BAA-9B8B-0E4C8C8BF4D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9B63ADC5-7A1E-4BAA-9B8B-0E4C8C8BF4D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B63ADC5-7A1E-4BAA-9B8B-0E4C8C8BF4D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B63ADC5-7A1E-4BAA-9B8B-0E4C8C8BF4D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6147B60-4137-422B-8262-E318B6E72D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6147B60-4137-422B-8262-E318B6E72D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6147B60-4137-422B-8262-E318B6E72D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6147B60-4137-422B-8262-E318B6E72D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A335444-B965-47D0-94B5-79810450E2A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A335444-B965-47D0-94B5-79810450E2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A335444-B965-47D0-94B5-79810450E2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A335444-B965-47D0-94B5-79810450E2A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
