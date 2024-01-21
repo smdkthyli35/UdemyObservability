@@ -4,6 +4,7 @@ using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +46,30 @@ namespace OpenTelemetry.Shared
                     {
                         efCoreOptions.SetDbStatementForText = true;
                         efCoreOptions.SetDbStatementForStoredProcedure = true;
+                    });
+
+                options
+                    .AddHttpClientInstrumentation(httpClientOptions =>
+                    {
+                        httpClientOptions.EnrichWithHttpRequestMessage = async (activity, request) =>
+                        {
+                            var requestContent = "empty";
+
+                            if (request.Content is not null)
+                            {
+                                requestContent = await request.Content.ReadAsStringAsync();
+                            }
+
+                            activity.SetTag("http.request.body", requestContent);
+                        };
+
+                        httpClientOptions.EnrichWithHttpResponseMessage = async (activity, response) =>
+                        {
+                            if (response.Content is not null)
+                            {
+                                activity.SetTag("http.response.body", await response.Content.ReadAsStringAsync());
+                            }
+                        };
                     });
 
                 options.AddConsoleExporter();

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using OpenTelemetry.Shared;
 using Order.API.Models;
 using Order.API.OrderServices;
+using Order.API.StockServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +18,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddOpenTelemetryExt(builder.Configuration);
 
+builder.Services.AddHttpClient<StockService>(options =>
+{
+    options.BaseAddress = new Uri((builder.Configuration["ApiServices:StockApi"])!);
+});
+
 builder.Services.AddScoped<OrderService>();
+builder.Services.AddScoped<StockService >();
 
 var app = builder.Build();
 
