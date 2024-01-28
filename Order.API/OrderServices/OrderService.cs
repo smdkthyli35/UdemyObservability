@@ -1,6 +1,7 @@
 ﻿using Common.Shared.DTOs;
 using OpenTelemetry.Shared;
 using Order.API.Models;
+using Order.API.RedisServices;
 using Order.API.StockServices;
 using System.Net;
 
@@ -10,15 +11,19 @@ namespace Order.API.OrderServices
     {
         private readonly AppDbContext _context;
         private readonly StockService _stockService;
+        private readonly RedisService _redisService;
 
-        public OrderService(AppDbContext context, StockService stockService)
+        public OrderService(AppDbContext context, StockService stockService, RedisService redisService)
         {
             _context = context;
             _stockService = stockService;
+            _redisService = redisService;
         }
 
         public async Task<ResponseDto<OrderCreateResponseDto>> CreateAsync(OrderCreateRequestDto requestDto)
         {
+            await _redisService.GetDb(0).StringSetAsync("userId", requestDto.UserId);
+
             using var activity = ActivitySourceProvider.Source.StartActivity();
             activity?.AddEvent(new("Sipariş süreci başladı!"));
 

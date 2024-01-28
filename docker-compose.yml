@@ -4,3 +4,5 @@ services:
     image: jaegertracing/all-in-one:1.49
   zipkin:
     image: openzipkin/zipkin:2.24
+  redis:
+    image: redis:7.0

@@ -72,6 +72,12 @@ namespace OpenTelemetry.Shared
                         };
                     });
 
+                options
+                    .AddRedisInstrumentation(redisOptions =>
+                    {
+                        redisOptions.SetVerboseDatabaseStatements = true;
+                    });
+
                 options.AddConsoleExporter();
                 options.AddOtlpExporter(); //Jaeger
             });

@@ -10,3 +10,7 @@ services:
     container_name: "zipkin-conteiner"
     ports:
       - 9411:9411
+  redis:
+    container_name: "redis-container"
+    ports:
+      - 6379:6379
