@@ -38,7 +38,7 @@ namespace OpenTelemetry.Shared
                                 : false;
                         };
 
-                        aspNetCoreOptions.RecordException = true;
+                        // aspNetCoreOptions.RecordException = true; hataları sadece elastic'de görebilmek için kapattık.
                     });
 
                 options
@@ -51,6 +51,11 @@ namespace OpenTelemetry.Shared
                 options
                     .AddHttpClientInstrumentation(httpClientOptions =>
                     {
+                        httpClientOptions.FilterHttpRequestMessage = (request) =>
+                        {
+                            return !request.RequestUri.AbsoluteUri.Contains("9200", StringComparison.InvariantCulture);
+                        };
+
                         httpClientOptions.EnrichWithHttpRequestMessage = async (activity, request) =>
                         {
                             var requestContent = "empty";
