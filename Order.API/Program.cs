@@ -5,9 +5,12 @@ using Order.API.Models;
 using Order.API.OrderServices;
 using Order.API.RedisServices;
 using Order.API.StockServices;
+using Serilog;
 using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog(Logging.Shared.Logging.ConfigureLogging);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
