@@ -1,4 +1,5 @@
 using Common.Shared;
+using Logging.Shared;
 using Microsoft.EntityFrameworkCore;
 using OpenTelemetry.Shared;
 using Order.API.Models;
@@ -51,6 +52,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseOpenTelemetryTraceIdExtension();
 
 app.UseMiddleware<RequestAndResponseActivityMiddleware>();
 

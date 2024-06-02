@@ -1,4 +1,5 @@
 using Common.Shared;
+using Logging.Shared;
 using OpenTelemetry.Shared;
 using Serilog;
 using Stock.API;
@@ -25,6 +26,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseOpenTelemetryTraceIdExtension();
 
 app.UseMiddleware<RequestAndResponseActivityMiddleware>();
 
